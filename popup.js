@@ -108,7 +108,7 @@
 
     function tornarTextoCopiado(btn) {
         const original = btn.textContent;
-        btn.textContent = '✅ Copiado!';
+        btn.textContent = 'Copiado!';
         btn.classList.add('copied');
         setTimeout(() => {
             btn.textContent = original;
@@ -149,7 +149,7 @@
             actions.className = 'policy-actions';
 
             const btnCopy = document.createElement('button');
-            btnCopy.textContent = '📋 Copiar JSON';
+            btnCopy.textContent = 'Copiar JSON';
             btnCopy.addEventListener('click', () => {
                 navigator.clipboard.writeText(json).then(() => {
                     tornarTextoCopiado(btnCopy);
@@ -161,15 +161,15 @@
             });
 
             const btnExpand = document.createElement('button');
-            btnExpand.textContent = '↕️ Expandir';
+            btnExpand.textContent = 'Expandir';
             btnExpand.addEventListener('click', () => {
                 if (textarea.style.height === 'auto') {
                     textarea.style.height = '120px';
                     textarea.style.overflow = 'hidden';
-                    btnExpand.textContent = '↕️ Expandir';
+                    btnExpand.textContent = 'Expandir';
                 } else {
                     textarea.style.height = 'auto';
-                    btnExpand.textContent = '↕️ Recolher';
+                    btnExpand.textContent = 'Recolher';
                 }
             });
 
