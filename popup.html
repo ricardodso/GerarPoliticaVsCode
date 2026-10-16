@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Intune VS Code Policy Generator</h1>
+        <p>Gera JSON para <strong>Allowed Extensions</strong> do VS Code no Intune</p>
+    </header>
+
+    <label for="extensions">Lista de extensões (uma por linha)</label>
+    <textarea id="extensions"
+              placeholder="Cole aqui a lista de extensões&#10;Ex.:&#10;ms-python.python&#10;ms-python.vscode-pylance&#10;eamodio.gitlens"></textarea>
+
+    <div class="option-row option-grid">
+        <div class="option">
+            <label for="starValue">Valor de <code>"*"</code></label>
+            <select id="starValue">
+                <option value="true" selected>true</option>
+                <option value="false">false</option>
+            </select>
+        </div>
+        <div class="option">
+            <label for="extValue">Valor das extensões</label>
+            <select id="extValue">
+                <option value="false" selected>false</option>
+                <option value="true">true</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="generate" class="btn-primary">⚙️ Gerar Políticas</button>
+        <button id="autoFill" class="btn-intune" disabled>📋 Gerar e Preencher no Intune</button>
+    </div>
+
+    <div class="controls">
+        <button id="exportCsv" class="btn-secondary" disabled>📄 Exportar CSV</button>
+        <button id="exportJson" class="btn-secondary" disabled>🗂️ Exportar JSON</button>
+        <button id="clear" class="btn-secondary">🗑️ Limpar</button>
+    </div>
+
+    <div class="option">
+        <div class="check-control">
+            <input type="checkbox" id="pretty" checked />
+            <label for="pretty">Saída formatada (indentada)</label>
+        </div>
+        <label for="limit" class="limit-label">Limite</label>
+        <input type="number" id="limit" min="1" step="1" />
+        <span class="hint">chars</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="result-header">
+        <h2>Políticas geradas</h2>
+        <span class="count" id="count"></span>
+    </div>
+
+    <div id="result" class="empty">Cole a lista de extensões e clique em <strong>Gerar Políticas</strong>.</div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="GerarPoliticaVSCode.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
