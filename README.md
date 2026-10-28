@@ -80,6 +80,7 @@ Exemplos de combinações:
 
 A lista é dividida em políticas cujo JSON indentado, como exibido no popup,
 não ultrapassa o limite configurado pelo usuário (padrão: **1023 caracteres**).
+A configuração `"*"` é repetida em cada política gerada.
 A documentação geral do Intune alerta que alguns campos podem ter limite de
 caracteres, mas não confirma o valor de 1023 para esta configuração: [Settings
 Catalog](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/).
